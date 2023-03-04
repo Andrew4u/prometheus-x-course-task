@@ -17,7 +17,7 @@ code {
 html,
 body {
   box-sizing: border-box;
-  max-width: 100%;
+  width: 100vw;
   margin: 0;
   font-size: 14px;
   
