@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./book-list.css";
 import { Link } from "react-router-dom";
 import { BooksContext } from "../contexts/BooksContextProvider";
@@ -57,7 +57,10 @@ function BookList() {
               <a
                 className="dropdown-item"
                 href="#"
-                onClick={() => setFilterByPrice("all")}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setFilterByPrice("all");
+                }}
               >
                 All
               </a>
@@ -66,7 +69,10 @@ function BookList() {
               <a
                 className="dropdown-item"
                 href="#"
-                onClick={() => setFilterByPrice("0-15")}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setFilterByPrice("0-15");
+                }}
               >
                 0 - 15
               </a>
@@ -75,7 +81,10 @@ function BookList() {
               <a
                 className="dropdown-item"
                 href="#"
-                onClick={() => setFilterByPrice("15-30")}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setFilterByPrice("15-30");
+                }}
               >
                 15 - 30
               </a>
@@ -84,7 +93,10 @@ function BookList() {
               <a
                 className="dropdown-item"
                 href="#"
-                onClick={() => setFilterByPrice("30+")}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setFilterByPrice("30+");
+                }}
               >
                 30 +
               </a>
