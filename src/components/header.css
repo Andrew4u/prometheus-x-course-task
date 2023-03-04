@@ -1,0 +1,55 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+    width: 100%;
+    /* border: 1px solid grey; */
+    border-left: none;
+    border-right: none;
+    padding: 10px 30px;
+    height: 10vh;
+    background-image: linear-gradient(#e6e2c7, rgb(108, 144, 24) 90%, #e6e2c7);
+}
+
+.header {
+    text-align: center;
+    vertical-align: middle;
+    /* background: rgb(108, 144, 24); */
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+.busket {
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+
+.header-right {
+    margin-right: 10px;
+}
+
+p.header-right {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header-right-block {
+    display: flex;
+    align-items: center;
+}
+
+h4.header {
+    margin: 0;
+    /* background-color: rgb(108, 144, 24) !important; */
+}
+
+button.btn-outline-dark:hover {
+    background-color: #781111;
+}
