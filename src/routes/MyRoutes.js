@@ -10,7 +10,7 @@ export default function MyRoutes() {
   return (
     <Routes>
       <Route path="/" element={<SigninRoute />} />
-      <Route path="signin" element={<SigninRoute />} />
+      <Route path="/signin" element={<SigninRoute />} />
       <Route
         path="book-list"
         element={
@@ -39,37 +39,3 @@ export default function MyRoutes() {
     </Routes>
   );
 }
-
-// export default function MyRoutes() {
-//   const [isAuthenticated, setIsAuthenticated] = useState(false);
-//   const [username, setUsername] = useState("");
-
-//   useEffect(() => {
-//     const storedUsername = localStorage.getItem("username");
-//     if (storedUsername) {
-//       setUsername(storedUsername);
-//       setIsAuthenticated(true);
-//     }
-//   }, []);
-
-//   return (
-//     <Routes>
-//       <Route path="/" element={<SigninRoute />} />
-//       <Route path="signin" element={<SigninRoute />} />
-//       <Route
-//         exact
-//         path="book-list"
-//         element={
-//           isAuthenticated ? (
-//             <BookListRoute />
-//           ) : (
-//             <Navigate to="/signin" replace={true} />
-//           )
-//         }
-//       />
-//       <Route path="specific-book" element={<SpecificBookRoute />} />
-//       <Route path="cart-page" element={<CartPageRoute />} />
-//       <Route path="*" element={<Page404Route />} />
-//     </Routes>
-//   );
-// }

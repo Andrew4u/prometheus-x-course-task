@@ -26,7 +26,11 @@ function Header() {
       <h4 className="header">X-course task / Kazun Andrii</h4>
       <div className="header-right-block">
         <Link to="cart-page">
-          <img src="/cart.svg" alt="Busket" className="busket header-right" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/cart.svg"}
+            alt="Busket"
+            className="busket header-right"
+          />
         </Link>
         <button
           type="submit"
@@ -35,7 +39,11 @@ function Header() {
         >
           Sign-out
         </button>
-        <img src="/avatar.png" alt="Avatar" className="avatar header-right" />
+        <img
+          src={process.env.PUBLIC_URL + "/images/avatar.png"}
+          alt="Avatar"
+          className="avatar header-right"
+        />
         <p className="header-right">{username}</p>
       </div>
     </header>

@@ -37,7 +37,11 @@ function CartPage() {
               Purchase
             </button>
           </div>
-          <img src="cart.svg" alt="Cart" className="img-cart-empty" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/cart.svg"}
+            alt="Cart"
+            className="img-cart-empty"
+          />
           <span>Cart empty...</span>
         </div>
       ) : (

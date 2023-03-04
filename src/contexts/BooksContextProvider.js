@@ -7,7 +7,7 @@ export const BooksProvider = (props) => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("/books.json")
+    fetch(process.env.PUBLIC_URL + "/books.json")
       .then((response) => response.json())
       .then((data) => setBooks(data.books))
       .catch((error) => console.log(error));

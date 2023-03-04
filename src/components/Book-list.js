@@ -98,7 +98,10 @@ function BookList() {
           {filteredBooks.map((book) => (
             <div className="book-in-books" key={book.id}>
               <img
-                src={book.image || "/imageNotFound.png"}
+                src={
+                  book.image ||
+                  process.env.PUBLIC_URL + "/images/imageNotFound.png"
+                }
                 alt={book.title}
                 className="cart-size"
               />

@@ -81,7 +81,9 @@ function SpecificBook() {
       <section className="specific-book">
         <div className="col-3 image_book">
           <img
-            src={book.image || "/imageNotFound.png"}
+            src={
+              book.image || process.env.PUBLIC_URL + "/images/imageNotFound.png"
+            }
             alt={book.title}
             className="img-book container"
           />
