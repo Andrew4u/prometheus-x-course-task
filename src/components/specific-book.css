@@ -136,3 +136,7 @@ button.minus {
 button.plus {
     border-radius: 5px 5px 0 0;
 }
+
+.text-aling{
+    text-align: justify;
+}

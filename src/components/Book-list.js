@@ -118,12 +118,12 @@ function BookList() {
                 className="cart-size"
               />
               {/* додано перевірку на довжину назви та заміну трикрапкою, якщо потрібно */}
-              <h4 className="cart-size">
+              <h5 className="cart-size">
                 {book.title.length > 24
                   ? book.title.substring(0, 24) + "..."
                   : book.title}
-              </h4>
-              <h5 className="cart-size">by {book.author}</h5>
+              </h5>
+              <h6 className="cart-size">by {book.author}</h6>
               <div className="button-view cart-size">
                 <h6>{book.price} USD </h6>
                 <Link to={`/specific-book/${book.id}`}>

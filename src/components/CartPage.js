@@ -58,7 +58,7 @@ function CartPage() {
           <table className="cart-book-list">
             <thead className="cart-book-list">
               <tr className="table-head">
-                <td>Title book</td>
+                <td className="title-col">Title book</td>
                 <td className="count">Count</td>
                 <td className="price">Price</td>
               </tr>
@@ -66,7 +66,7 @@ function CartPage() {
             <tbody className="cart-book-list">
               {books.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.title}</td>
+                  <td className="title-col">{item.title}</td>
                   <td className="count">{item.count}</td>
                   <td className="price">${item.price}</td>
                 </tr>

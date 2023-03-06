@@ -91,15 +91,15 @@ function SpecificBook() {
         <div className="book container">
           <p>
             <strong>Book name: </strong>
-            {book.title}
+            <i>{book.title}</i>
           </p>
           <p>
             <strong>Book author: </strong>
-            {book.author}
+            <i>{book.author}</i>
           </p>
-          <p>
+          <p className="text-aling">
             <strong>About: </strong>
-            {book.shortDescription}
+            <i>{book.shortDescription}</i>
           </p>
         </div>
         <div className="col-3 add-to-cart">
@@ -171,7 +171,7 @@ function SpecificBook() {
       <section className="description container">
         <p>
           <strong>Description: </strong>
-          {book.description}{" "}
+          <i>{book.description}{" "}</i>
         </p>
       </section>
     </main>
