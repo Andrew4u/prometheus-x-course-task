@@ -3,8 +3,8 @@ import { render, fireEvent } from "@testing-library/react";
 import SpecificBook from "../components/Specific-book";
 
 describe("SpecificBook", () => {
-  it("increments count on clicking + button", () => {
-    const { getByTestId, getByText } = render(<SpecificBook />);
+  test("increments count on clicking + button", async () => {
+    const { getByTestId, getByText } = await render(<SpecificBook />);
     const incrementButton = getByTestId("plus");
     const countInput = getByText("1");
 
@@ -13,13 +13,14 @@ describe("SpecificBook", () => {
     expect(countInput).toHaveTextContent("2");
   });
 
-  it("decrements count on clicking - button", () => {
-    const { getByTestId, getByText } = render(<SpecificBook />);
+  test("decrements count on clicking - button", async () => {
+    const { getByTestId, getByText } = await render(<SpecificBook />);
     const decrementButton = getByTestId("minus");
-    const countInput = getByText("1");
+    const countInput = getByText("2");
 
     fireEvent.click(decrementButton);
 
     expect(countInput).toHaveTextContent("1");
   });
 });
+
