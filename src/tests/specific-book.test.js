@@ -31,38 +31,40 @@ jest.mock("react-router-dom", () => ({
   }),
 }));
 
-test("increments count on clicking + button", () => {
-  const { getByTestId, getByLabelText } = render(<SpecificBook />);
+describe("SpecificBook", () => {
+  test("increments count on clicking + button", () => {
+    const { getByTestId, getByLabelText } = render(<SpecificBook />);
 
-  const incrementButton = getByTestId("plus");
-  const countInput = getByLabelText("Count:");
+    const incrementButton = getByTestId("plus");
+    const countInput = getByLabelText("Count:");
 
-  fireEvent.click(incrementButton);
+    fireEvent.click(incrementButton);
 
-  expect(countInput.value).toBe("2");
-});
+    expect(countInput.value).toBe("2");
+  });
 
-test("decrements count on clicking - button", () => {
-  const { getByTestId, getByLabelText } = render(<SpecificBook />);
+  test("decrements count on clicking - button", () => {
+    const { getByTestId, getByLabelText } = render(<SpecificBook />);
 
-  const decrementButton = getByTestId("minus");
-  const countInput = getByLabelText("Count:");
+    const decrementButton = getByTestId("minus");
+    const countInput = getByLabelText("Count:");
 
-  fireEvent.click(decrementButton);
+    fireEvent.click(decrementButton);
 
-  expect(countInput.value).toBe("1");
-});
+    expect(countInput.value).toBe("1");
+  });
 
-test("updates total price when count changes", () => {
-  const { getByLabelText, getByText, getElementById, getByTestId } = render(
-    <SpecificBook />
-  );
-  const countInput = getByLabelText("Count:");
-  const priceElement = getByTestId("price");
-  const totalPriceElement = getByTestId("total-price");
+  test("updates total price when count changes", () => {
+    const { getByLabelText, getByText, getElementById, getByTestId } = render(
+      <SpecificBook />
+    );
+    const countInput = getByLabelText("Count:");
+    const priceElement = getByTestId("price");
+    const totalPriceElement = getByTestId("total-price");
 
-  fireEvent.change(countInput, { target: { value: "10" } });
+    fireEvent.change(countInput, { target: { value: "10" } });
 
-  expect(priceElement.textContent).toEqual("10.99");
-  expect(totalPriceElement.textContent).toEqual("109.90");
+    expect(priceElement.textContent).toEqual("10.99");
+    expect(totalPriceElement.textContent).toEqual("109.90");
+  });
 });
