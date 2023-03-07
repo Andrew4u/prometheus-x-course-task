@@ -112,7 +112,7 @@ function SpecificBook() {
             <div>
               <p className="align">
                 <span className="bold">Price, $: </span>
-                <span className="bold" id="price">
+                <span className="bold" id="price" data-testid="price">
                   {book.price}
                 </span>
               </p>
@@ -155,7 +155,7 @@ function SpecificBook() {
             <div>
               <p className="align">
                 <span className="bold">Total price, $: </span>
-                <span className="bold" id="total-price">
+                <span className="bold" id="total-price" data-testid="total-price">
                   {totalPrice.toFixed(2)}
                 </span>
               </p>
