@@ -5,50 +5,50 @@ import { BooksContext } from "../contexts/BooksContextProvider";
 import "./specific-book.css";
 
 function SpecificBook() {
-  const { bookId } = useParams();
+  const { bookId } = useParams(); //параметр з динамічного шляху URL-адреси, зазначений в роумінгу
   const books = useContext(BooksContext);
   const [book, setBook] = useState(null);
   const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [cartItems, setCartItems] = useState({});
-
+  const [cartItems, setCartItems] = useState({}); //стейт для кошика
+//пошук потрібної книги
   useEffect(() => {
     const book = books.find((book) => book.id === parseInt(bookId));
     setBook(book);
   }, [books, bookId]);
-
+//розрахунок загальної вартості
   useEffect(() => {
     if (book && count > 0 && count <= 42) {
       const totalPrice = count * book.price;
       setTotalPrice(totalPrice);
     }
   }, [book, count]);
-
+//запускається лише один раз, коли компонент монтується
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
     if (storedCartItems && Object.keys(storedCartItems).length > 0) {
       setCartItems(storedCartItems);
     }
   }, []);
-
+//встановлення кількості книг після повернення на сторінку
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
     if (storedCartItems && storedCartItems[bookId]) {
       setCount(storedCartItems[bookId].count);
     }
   }, [bookId]);
-
+//оновлення у локальний стейт
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
-
+//відображення кількості обраних книг
   const handleCountChange = (event) => {
     const quantity = parseInt(event.target.value);
     if (quantity > 0 && quantity <= 42) {
       setCount(quantity);
     }
   };
-
+//додавання книг до кошику та локального стейту
   const handleAddToCart = (event) => {
     event.preventDefault();
     const totalPrice = count * book.price;
@@ -69,12 +69,12 @@ function SpecificBook() {
   };
 
   if (!book) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; //цей фрагмент рендериться одразу, якщо не встигає встановитись стейт або ефект, щоб не виникала помилка, потім зникає
   }
 
-  const cartItem = cartItems[bookId] || {};
-  const cartItemCount = cartItem.count || 0;
-  const cartItemPrice = cartItem.price || 0;
+  // const cartItem = cartItems[bookId] || {};
+  // const cartItemCount = cartItem.count || 0;
+  // const cartItemPrice = cartItem.price || 0;
 
   return (
     <main className="only-book">

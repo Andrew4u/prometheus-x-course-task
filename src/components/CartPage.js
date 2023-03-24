@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./cartPage.css";
 
 function CartPage() {
-  const [cartItems, setCartItems] = useState({});
+  // const [cartItems, setCartItems] = useState({});
   const [books, setBooks] = useState([]);
-
+//витягується з локального стейту інформація про обрані книжки для відображення на сторінці кошика у таблиці
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || {};
-    setCartItems(storedCartItems);
+    // setCartItems(storedCartItems);
     setBooks(
       Object.values(storedCartItems).map((item) => ({
         count: item.count,
@@ -19,7 +19,7 @@ function CartPage() {
 
   const handlePurchaseClick = () => {
     localStorage.removeItem("cartItems");
-    setCartItems({});
+    // setCartItems({});
     setBooks([]);
   };
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 export const BooksContext = React.createContext([]);
 
+//створення провайдеру для контексту даних з .json файлу 
 export const BooksProvider = (props) => {
   const [books, setBooks] = useState([]);
 

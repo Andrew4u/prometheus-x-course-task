@@ -6,6 +6,7 @@ import "./header.css";
 function Header() {
   const username = localStorage.getItem("username");
   const navigate = useNavigate();
+  //поведінка кнопки виходу
   const handleSignoutClick = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("cartItems");

@@ -4,10 +4,15 @@ import { Link } from "react-router-dom";
 import { BooksContext } from "../contexts/BooksContextProvider";
 
 function BookList() {
-  const [searchText, setSearchText] = useState("");
-  const [filterByPrice, setFilterByPrice] = useState("all");
   const books = useContext(BooksContext);
+  
+  //стейт для пошуку назви
+  const [searchText, setSearchText] = useState("");
 
+  //стейт для фільтрування за ціною
+  const [filterByPrice, setFilterByPrice] = useState("all");
+  
+  //умова фільтру за ціною
   const filterBooksByPrice = (book) => {
     switch (filterByPrice) {
       case "all":
@@ -54,52 +59,52 @@ function BookList() {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <a
+              <button
                 className="dropdown-item"
-                href="#"
+                type="button"
                 onClick={(event) => {
                   event.preventDefault();
                   setFilterByPrice("all");
                 }}
               >
                 All
-              </a>
+              </button>
             </li>
             <li>
-              <a
+              <button
                 className="dropdown-item"
-                href="#"
+                type="button"
                 onClick={(event) => {
                   event.preventDefault();
                   setFilterByPrice("0-15");
                 }}
               >
                 0 - 15
-              </a>
+              </button>
             </li>
             <li>
-              <a
+              <button
                 className="dropdown-item"
-                href="#"
+                type="button"
                 onClick={(event) => {
                   event.preventDefault();
                   setFilterByPrice("15-30");
                 }}
               >
                 15 - 30
-              </a>
+              </button>
             </li>
             <li>
-              <a
+              <button
                 className="dropdown-item"
-                href="#"
+                type="button"
                 onClick={(event) => {
                   event.preventDefault();
                   setFilterByPrice("30+");
                 }}
               >
                 30 +
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -130,7 +135,6 @@ function BookList() {
                   <button
                     type="button"
                     className="view btn btn-outline-info"
-                    // onClick={() => handleViewClick(book.id)}
                   >
                     View
                   </button>
